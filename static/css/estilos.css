@@ -1,0 +1,149 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f8f9fa;
+    color: #1c1c1c;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+nav .menu a.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav .menu a.nav-link:hover {
+    color: #25D366; /* verde WhatsApp en hover */
+}
+
+/* Hero */
+.hero, .services-hero, .developer-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0066cc, #00bfff);
+    color: #fff;
+}
+
+.hero h1, .services-hero h2, .developer-hero h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.hero .lead, .services-hero .lead {
+    font-size: 1.1em;
+}
+
+/* Botón principal */
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ffc107; /* amarillo */
+    color: #1c1c1c;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: #e6b800;
+}
+
+/* Cards */
+.features, .services-cards, .developer-hero .card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s;
+    border-radius: 6px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Botón flotante completo tipo WhatsApp - DEFINITIVO */
+.contact-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366 !important; /* verde WhatsApp */
+    color: white !important; /* texto e icono en blanco */
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    z-index: 1000;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.contact-float:hover {
+    background-color: #20b358 !important; /* verde WhatsApp más oscuro al hover */
+    transform: scale(1.1);
+}
+
+.contact-float i, .contact-float span {
+    color: white !important; /* asegurar icono y texto blancos */
+}
+
+/* Ocultar botón flotante solo en la página Desarrollador */
+body.desarrollador-page .contact-float {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .features, .services-cards, .developer-hero .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .menu a.nav-link {
+        margin: 10px 0;
+    }
+}

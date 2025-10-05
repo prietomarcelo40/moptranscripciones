@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="text-center hero">
+    <h1>Bienvenidos a nuestra página</h1>
+    <p class="lead">Transcribimos tus audios a texto.</p>
+</div>
+
+<section class="features">
+    <div class="card">
+        <h3>Celeriad.</h3>
+        <p>Entrega de transcripciones en tiempo y forma.</p>
+    </div>
+    <div class="card">
+        <h3>Precisión</h3>
+        <p>Transcripciones exactas con revisión profesional.</p>
+    </div>
+    <div class="card">
+        <h3>Confidencialidad.</h3>
+        <p>Aseguramos privacidad de nuestros clientes.</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnFlotante = document.querySelector('.contact-float');
+        if(btnFlotante) btnFlotante.href = "https://wa.me/1133810134";
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+<div class="text-center services-hero">
+    <h2>Nuestros Servicios</h2>
+    <p class="lead">Transcripciones profesionales para todos tus audios</p>
+</div>
+
+<section class="services-cards">
+    <div class="card">
+        <h3>INFORMES MÉDICOS</h3>
+        <p>Transcripción rápida y profesional de informes médicos (todos los servicios y especialidades).</p>
+    </div>
+    <div class="card">
+        <h3>CONFERENCIAS Y ENTREVISTAS</h3>
+        <p>Transcripción fiel y literal de entrevistas y conferncias en formato claro y organizado.</p>
+    </div>
+    <div class="card">
+        <h3>VIDEOS</h3>
+        <p>Transcripción literal o preestablecida de videos.</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnFlotante = document.querySelector('.contact-float');
+        if(btnFlotante) btnFlotante.href = "https://wa.me/1133810134";
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Desarrollador{% endblock %}
+
+{% block body_class %}desarrollador-page{% endblock %}
+
+{% block content %}
+<div class="text-center developer-hero" style="padding: 40px 20px; background-color: #f0f8ff; margin: 20px;">
+    <div class="card" style="max-width: 400px; margin: 0 auto; padding: 25px; background-color: #ffffff; text-align: center;">
+        <!-- Imagen de Marce -->
+        <img src="{{ url_for('static', filename='img/marce.jpg') }}" 
+             alt="Foto de Marce" 
+             class="rounded-circle shadow" 
+             width="200" height="200" 
+             style="margin-bottom: 20px;">
+
+        <h2 style="color: #003366; margin-bottom: 15px;">Marcelo Prieto</h2>
+        <p style="color: #000033; margin-bottom: 10px;">Especialista en desarrollo web con Python Flask.</p>
+        <p style="color: #0066cc; font-weight: bold;">
+            Contacto: 
+            <a href="https://webmop.onrender.com/" target="_blank" style="color: #0066cc; text-decoration: underline;">
+                https://webmop.onrender.com/
+            </a>
+        </p>
+    </div>
+</div>
+{% endblock %}
