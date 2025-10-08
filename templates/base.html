@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mop Transcripciones{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mop Transcripciones{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body class="{% block body_class %}{% endblock %}">
-    <header>
-        <nav>
-            <div class="logo">Mop Transcripciones</div>
-            <button class="menu-toggle" aria-label="Abrir menú de navegación">
+    <header>
+        <nav>
+            <div class="logo">Mop Transcripciones</div>
+            <button class="menu-toggle" aria-label="Abrir menú de navegación">
                 <i class="fa fa-bars"></i>
             </button>
             <div class="menu" id="main-menu">
-                <a href="{{ url_for('index') }}" class="nav-link">Inicio</a>
-                <a href="{{ url_for('servicios') }}" class="nav-link">Servicios</a>
-                <a href="{{ url_for('desarrollador') }}" class="nav-link">Desarrollador</a>
-            </div>
-                    </nav>
-    </header>
+                <a href="{{ url_for('index') }}" class="nav-link">Inicio</a>
+                <a href="{{ url_for('servicios') }}" class="nav-link">Servicios</a>
+                <a href="{{ url_for('desarrollador') }}" class="nav-link">Desarrollador</a>
+            </div>
+        </nav>
+    </header>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-        <a href="https://wa.me/1133810134" class="contact-float" target="_blank">
-        <i class="fa fa-keyboard-o"></i> <span>Contacto</span>
-    </a>
+    <!-- Botón de contacto flotante -->
+    <a href="https://wa.me/1133810134" class="contact-float" target="_blank">
+        <i class="fa fa-keyboard-o"></i> <span>Contacto</span>
+    </a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const toggleButton = document.querySelector('.menu-toggle');
             const menu = document.getElementById('main-menu');
-
             toggleButton.addEventListener('click', function() {
                 menu.classList.toggle('active');
             });
         });
     </script>
-    </body>
+</body>
 </html>

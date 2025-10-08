@@ -5,20 +5,25 @@
 {% block body_class %}desarrollador-page{% endblock %}
 
 {% block content %}
-<div class="text-center developer-hero" style="padding: 40px 20px; background-color: #f0f8ff; margin: 20px;">
-    <div class="card" style="max-width: 400px; margin: 0 auto; padding: 25px; background-color: #ffffff; text-align: center;">
-        <!-- Imagen de Marce -->
-        <img src="{{ url_for('static', filename='img/marce.jpg') }}" 
-             alt="Foto de Marce" 
-             class="rounded-circle shadow" 
-             width="200" height="200" 
-             style="margin-bottom: 20px;">
+<div class="developer-hero-container">
+    <div class="card developer-card">
+        <img 
+            src="{{ url_for('static', filename='img/marce.jpg') }}" 
+            alt="Foto de Marce" 
+            class="rounded-circle shadow developer-img"
+        >
 
-        <h2 style="color: #003366; margin-bottom: 15px;">Marcelo Prieto</h2>
-        <p style="color: #000033; margin-bottom: 10px;">Desarrollo web y automatización de procesos informáticos.</p>
-        <p style="color: #0066cc; font-weight: bold;">
-            Contacto: 
-            <a href="https://webmop.onrender.com/" target="_blank" style="color: #0066cc; text-decoration: underline;">
+        <h2 class="developer-title">Marcelo Prieto</h2>
+        <p class="developer-text">
+            Diseñador y desarrollador de esta página web.
+        </p>
+        <p class="developer-contact">
+            Contacto:
+            <a 
+                href="https://webmop.onrender.com/" 
+                target="_blank" 
+                class="developer-link"
+            >
                 https://webmop.onrender.com/
             </a>
         </p>

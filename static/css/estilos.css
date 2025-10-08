@@ -1,3 +1,7 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
 /* Reset básico */
 * {
     margin: 0;
@@ -38,11 +42,17 @@ nav .menu a.nav-link {
     transition: all 0.3s ease;
 }
 
+/* Color azul para coherencia visual */
 nav .menu a.nav-link:hover {
-    color: #25D366; /* verde WhatsApp en hover */
+    color: #0066cc;
 }
 
-/* ESTILOS AÑADIDOS PARA EL MENU HAMBURGUESA (Desktop: oculto) */
+nav .menu a.nav-link.active {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Botón hamburguesa */
 .menu-toggle {
     display: none;
     background: none;
@@ -52,7 +62,7 @@ nav .menu a.nav-link:hover {
     cursor: pointer;
 }
 
-/* Hero */
+/* Hero sections */
 .hero, .services-hero, .developer-hero {
     text-align: center;
     padding: 40px 20px;
@@ -74,7 +84,7 @@ nav .menu a.nav-link:hover {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 25px;
-    background-color: #ffc107; /* amarillo */
+    background-color: #ffc107;
     color: #1c1c1c;
     text-decoration: none;
     font-weight: bold;
@@ -87,8 +97,8 @@ nav .menu a.nav-link:hover {
     background-color: #e6b800;
 }
 
-/* Cards */
-.features, .services-cards, .developer-hero .card {
+/* Cards - OPTIMIZACIÓN FINAL DE FLEXIBILIDAD EN ESCRITORIO */
+.features, .services-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -99,7 +109,9 @@ nav .menu a.nav-link:hover {
 .card {
     background-color: #fff;
     padding: 20px;
-    max-width: 280px;
+    flex-basis: 300px;
+    flex-grow: 1;
+    max-width: 350px;
     text-align: center;
     transition: transform 0.3s;
     border-radius: 6px;
@@ -109,13 +121,64 @@ nav .menu a.nav-link:hover {
     transform: translateY(-5px);
 }
 
-/* Botón flotante completo tipo WhatsApp - DEFINITIVO */
+/* =========================
+   PÁGINA DESARROLLADOR
+========================= */
+.developer-hero-container {
+    padding: 30px 10px;
+    background-color: #f0f8ff;
+    margin: 10px;
+}
+
+.developer-card {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.developer-img {
+    margin-bottom: 20px;
+    border: 3px solid #0066cc;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.developer-title {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.developer-text {
+    color: #000033;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.developer-contact {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.developer-link {
+    color: #0066cc;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+/* Botón flotante tipo WhatsApp */
 .contact-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366 !important; /* verde WhatsApp */
-    color: white !important; /* texto e icono en blanco */
+    background-color: #25D366 !important;
+    color: white !important;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 30px;
@@ -128,40 +191,39 @@ nav .menu a.nav-link:hover {
 }
 
 .contact-float:hover {
-    background-color: #20b358 !important; /* verde WhatsApp más oscuro al hover */
+    background-color: #20b358 !important;
     transform: scale(1.1);
 }
 
 .contact-float i, .contact-float span {
-    color: white !important; /* asegurar icono y texto blancos */
+    color: white !important;
 }
 
-/* Ocultar botón flotante solo en la página Desarrollador */
+/* Ocultar botón flotante solo en desarrollador */
 body.desarrollador-page .contact-float {
     display: none !important;
 }
 
-/* MEDIA QUERY MEJORADA PARA DISPOSITIVOS MÓVILES */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
-    /* Mostrar el botón hamburguesa */
     .menu-toggle {
-        display: block; 
+        display: block;
     }
 
-    /* Ocultar el menú de navegación por defecto */
     nav .menu {
-        display: none; 
+        display: none;
     }
 
-    /* Estilo del menú al estar ACTIVO (desplegado) */
     .menu.active {
-        display: flex; 
+        display: flex;
         flex-direction: column;
-        position: absolute; 
-        top: 60px; /* Ajustar si el header tiene otra altura */
+        position: absolute;
+        top: 60px;
         left: 0;
         width: 100%;
-        background-color: #1a1a1a; 
+        background-color: #1a1a1a;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         padding: 10px 0;
         z-index: 999;
@@ -171,17 +233,27 @@ body.desarrollador-page .contact-float {
         margin: 5px 20px;
         text-align: center;
         padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Asegurar que las cards se estiren y se apilen correctamente */
-    .features, .services-cards, .developer-hero .card {
+    .features, .services-cards {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .card {
-        max-width: 90%; 
-        width: 100%; 
+        max-width: 90%;
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .developer-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .developer-hero-container {
+        margin: 10px 0;
+        padding: 20px 0;
     }
 }
