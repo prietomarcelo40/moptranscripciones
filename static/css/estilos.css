@@ -42,6 +42,16 @@ nav .menu a.nav-link:hover {
     color: #25D366; /* verde WhatsApp en hover */
 }
 
+/* ESTILOS AÑADIDOS PARA EL MENU HAMBURGUESA (Desktop: oculto) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
 /* Hero */
 .hero, .services-hero, .developer-hero {
     text-align: center;
@@ -131,19 +141,47 @@ body.desarrollador-page .contact-float {
     display: none !important;
 }
 
-/* Responsive */
+/* MEDIA QUERY MEJORADA PARA DISPOSITIVOS MÓVILES */
 @media (max-width: 768px) {
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Ocultar el menú de navegación por defecto */
+    nav .menu {
+        display: none; 
+    }
+
+    /* Estilo del menú al estar ACTIVO (desplegado) */
+    .menu.active {
+        display: flex; 
+        flex-direction: column;
+        position: absolute; 
+        top: 60px; /* Ajustar si el header tiene otra altura */
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    nav .menu.active a.nav-link {
+        margin: 5px 20px;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+
+    /* Asegurar que las cards se estiren y se apilen correctamente */
     .features, .services-cards, .developer-hero .card {
         flex-direction: column;
         align-items: center;
     }
-
-    nav .menu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav .menu a.nav-link {
-        margin: 10px 0;
+    
+    .card {
+        max-width: 90%; 
+        width: 100%; 
     }
 }
